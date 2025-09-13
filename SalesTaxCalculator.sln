@@ -5,6 +5,10 @@ VisualStudioVersion = 17.14.36301.6 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{6AB668FA-AFE4-4874-8CCC-266521CF227E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxCalculator.Core", "SalesTaxCalculator.Core\SalesTaxCalculator.Core.csproj", "{3C527108-4834-46F6-BD30-0281FF14AD3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxCalculator.Tests", "SalesTaxCalculator.Tests\SalesTaxCalculator.Tests.csproj", "{DA747457-B272-47AE-81B1-59BF92564706}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{6AB668FA-AFE4-4874-8CCC-266521CF227E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AB668FA-AFE4-4874-8CCC-266521CF227E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AB668FA-AFE4-4874-8CCC-266521CF227E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C527108-4834-46F6-BD30-0281FF14AD3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C527108-4834-46F6-BD30-0281FF14AD3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C527108-4834-46F6-BD30-0281FF14AD3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C527108-4834-46F6-BD30-0281FF14AD3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA747457-B272-47AE-81B1-59BF92564706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA747457-B272-47AE-81B1-59BF92564706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA747457-B272-47AE-81B1-59BF92564706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA747457-B272-47AE-81B1-59BF92564706}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
