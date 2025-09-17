@@ -5,12 +5,12 @@ public sealed class ImportDutyTaxRule : ITaxRule
 {
     private readonly decimal _rate;
 
-    public ImportDutyTaxRule(decimal rate = 0.05m)
+    public ImportDutyTaxRule(decimal rate = TaxRates.ImportDuty)
     {
         _rate = rate;
     }
 
-    public decimal Calculate(LineItem item)
+    public decimal Calculate(BasketItem item)
     {
         if (!item.Product.Imported) return 0m;
         return item.NetPrice * _rate;

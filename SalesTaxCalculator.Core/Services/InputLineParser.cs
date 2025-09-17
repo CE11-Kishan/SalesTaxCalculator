@@ -1,9 +1,10 @@
 using SalesTaxCalculator.Core.Models;
-namespace SalesTaxCalculator.Core.Parsing;
+using SalesTaxCalculator.Core.Enums;
+namespace SalesTaxCalculator.Core.Services;
 
 public static class InputLineParser
 {
-    public static LineItem Parse(string line)
+    public static BasketItem Parse(string line)
     {
         if (string.IsNullOrWhiteSpace(line))
             throw new FormatException("Line is empty");
@@ -30,10 +31,10 @@ public static class InputLineParser
         if (name.Length == 0)
             throw new FormatException($"Missing product name in line: '{line}'");
 
-        var (category, imported) = Classify(name);
+        var (category, imported) = CategoryClassifier.Classify(name);
         var normalizedName = NormalizeSpaces(name);
         var product = new Product(normalizedName, price, category, imported);
-        return new LineItem(product, qty);
+    return new BasketItem(product, qty);
     }
 
     private static string NormalizeSpaces(string input)
@@ -60,14 +61,4 @@ public static class InputLineParser
         return new string(buffer.Slice(0, w));
     }
 
-    private static (ProductCategory category, bool imported) Classify(string rawName)
-    {
-        bool imported = rawName.Contains("imported", StringComparison.OrdinalIgnoreCase);
-        string lower = rawName.ToLowerInvariant();
-        ProductCategory category = ProductCategory.Other;
-        if (lower.Contains("book")) category = ProductCategory.Book;
-        else if (lower.Contains("chocolate") || lower.Contains("chocolates")) category = ProductCategory.Food;
-        else if (lower.Contains("pill")) category = ProductCategory.Medical;
-        return (category, imported);
-    }
 }

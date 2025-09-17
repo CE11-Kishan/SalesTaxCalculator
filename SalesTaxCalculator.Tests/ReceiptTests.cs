@@ -1,6 +1,6 @@
 namespace SalesTaxCalculator.Tests;
 
-using SalesTaxCalculator.Core.Parsing;
+using SalesTaxCalculator.Core.Models;
 using SalesTaxCalculator.Core.Services;
 using Xunit;
 
@@ -8,8 +8,13 @@ public class ReceiptTests
 {
     private Receipt Build(params string[] lines)
     {
-    var items = lines.Select(l => InputLineParser.Parse(l));
-        return new ReceiptBuilder().Build(items);
+        var basket = new Basket();
+        foreach (var line in lines)
+        {
+            var item = InputLineParser.Parse(line);
+            basket.Add(item);
+        }
+        return basket.GenerateReceipt();
     }
 
     [Fact]

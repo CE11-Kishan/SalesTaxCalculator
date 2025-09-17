@@ -1,4 +1,4 @@
-namespace SalesTaxCalculator.Core.Models;
+namespace SalesTaxCalculator.Core.Enums;
 
 public enum ProductCategory
 {

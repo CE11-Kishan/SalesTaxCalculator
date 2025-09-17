@@ -3,5 +3,5 @@ namespace SalesTaxCalculator.Core.Tax;
 
 public interface ITaxRule
 {
-    decimal Calculate(LineItem item);
+    decimal Calculate(BasketItem item);
 }
